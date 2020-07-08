@@ -98,6 +98,7 @@ ARG LLVM_VERSION
 RUN mkdir -p /mcsema/local
 
 COPY --from=build /opt/trailofbits/mcsema /opt/trailofbits/mcsema
+COPY --from=build /opt/trailofbits/remill /opt/trailofbits/remill
 COPY scripts/docker-lifter-entrypoint.sh /opt/trailofbits/mcsema
 ENV LLVM_VERSION=llvm${LLVM_VERSION} \
     PATH="/opt/trailofbits/mcsema/bin:${PATH}"
